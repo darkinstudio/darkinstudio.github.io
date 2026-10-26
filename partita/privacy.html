@@ -182,6 +182,8 @@ document.querySelectorAll('.lang button').forEach((b) => b.onclick = () => {
   document.documentElement.lang = l; document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
   document.title = (l === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy') + ' · Partita';
 });
+// the game opens the page in its own language (?lang=en or ?lang=ar)
+if (new URLSearchParams(location.search).get('lang') === 'en') document.querySelector('.lang button[data-l="en"]').click();
 </script>
 </body>
 </html>
